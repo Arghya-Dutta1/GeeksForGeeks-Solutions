@@ -4,6 +4,11 @@ Welcome to my GeeksForGeeks solutions repository! This repository contains my so
 ## GeeksForGeeks Profile
 Check out my [GeeksForGeeks profile](https://www.geeksforgeeks.org/user/arghyadurwum/) to see my progress and other problems I've solved.
 
+## GeeksForGeeks Profile Stats
+<a href="https://www.geeksforgeeks.org/user/arghyadurwum/">
+  <img src="https://gfgstatscard.vercel.app/arghyadurwum" alt="GFG stats" />
+</a>
+
 ## Contributing
 If you have suggestions or improvements, feel free to open an issue or submit a pull request. Let's learn together!
 
