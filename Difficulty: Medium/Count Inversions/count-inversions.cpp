@@ -5,15 +5,6 @@ using namespace std;
 
 // } Driver Code Ends
 
-// class Solution {
-//   public:
-//     // Function to count inversions in the array.
-//     int inversionCount(vector<int> &arr) {
-//         // Your Code Here
-//     }
-// };
-
-
 class Solution {
   public:
     int inversionCount(vector<int> &arr) {
@@ -30,7 +21,7 @@ class Solution {
                 temp[k++] = arr[i++];
             } else {
                 temp[k++] = arr[j++];
-                inversions += (mid - i + 1); // All remaining elements in the left part are inversions
+                inversions += (mid - i + 1);
             }
         }
 
