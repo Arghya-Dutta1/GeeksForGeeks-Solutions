@@ -43,7 +43,7 @@ class Solution {
     // Function to check if the linked list has a loop.
     bool detectLoop(Node* head) {
         // your code here
-        if(head==NULL) return false;
+        if(!head) return false;
         Node* s=head;
         Node* f=head;
         while(f && f->next){
