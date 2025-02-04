@@ -6,11 +6,19 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    int findMin(vector<int>& arr) {
+    int findMin(vector<int>& nums) {
         // complete the function here
-        priority_queue<int, vector<int>, greater<>> pq;
-        for(auto i:arr) pq.push(i);
-        return pq.top();
+        int l=0, r=nums.size()-1;
+        while(l<r){
+            int m=(l+r)/2;
+            if(nums[m]>nums[r])
+                l=m+1;
+            else if(nums[m]<nums[r])
+                r=m;
+            else
+                r--;
+        }
+        return nums[l];
     }
 };
 
