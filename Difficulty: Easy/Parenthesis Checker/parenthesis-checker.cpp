@@ -13,7 +13,7 @@ class Solution {
         return c;
     }
   
-    bool isParenthesisBalanced(string& s) {
+    bool isBalanced(string& s) {
         // code here
         stack<char> st;
         for(char i:s){
@@ -30,6 +30,7 @@ class Solution {
     }
 };
 
+
 //{ Driver Code Starts.
 
 int main() {
@@ -39,7 +40,7 @@ int main() {
     while (t--) {
         cin >> a;
         Solution obj;
-        if (obj.isParenthesisBalanced(a))
+        if (obj.isBalanced(a))
             cout << "true" << endl;
         else
             cout << "false" << endl;
