@@ -6,6 +6,7 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 // User function template for C++
 
 class Solution {
@@ -21,6 +22,8 @@ class Solution {
         return -1;
     }
 };
+
+
 
 //{ Driver Code Starts.
 
@@ -41,6 +44,7 @@ int main() {
 
         Solution obj;
         cout << obj.majorityElement(a) << endl;
+        cout << "~" << endl;
     }
 
     return 0;
