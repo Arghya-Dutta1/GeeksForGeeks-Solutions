@@ -1,14 +1,7 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
-
-// User function Template for C++
 class Solution {
   public:
     int longestSubarray(vector<int> &arr, int k) {
+        // Code here
         int n = arr.size();
         vector<int> mapped(n);
         for (int i = 0; i < n; ++i)
@@ -29,40 +22,9 @@ class Solution {
                 }
             }
 
-            if (firstSeen.find(prefixSum) == firstSeen.end()) {
+            if (firstSeen.find(prefixSum) == firstSeen.end()) 
                 firstSeen[prefixSum] = i;
-            }
         }
-
         return maxLen;
     }
 };
-
-
-
-//{ Driver Code Starts.
-
-int main() {
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-        vector<int> arr;
-        string input;
-        getline(cin, input);
-        stringstream ss(input);
-        int number;
-        while (ss >> number) {
-            arr.push_back(number);
-        }
-        getline(cin, input);
-        int k = stoi(input);
-
-        Solution ob;
-        cout << ob.longestSubarray(arr, k) << endl;
-        cout << "~" << endl;
-    }
-    return 0;
-}
-
-// } Driver Code Ends
