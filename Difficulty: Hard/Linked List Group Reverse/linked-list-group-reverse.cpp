@@ -1,109 +1,61 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-using namespace std;
-
-struct Node {
+/*
+class Node {
+  public:
     int data;
     Node* next;
 
-    Node(int x) {
+    Node(int x){
         data = x;
         next = NULL;
     }
 };
-
-/* Function to print linked list */
-void printList(Node* node) {
-    while (node != NULL) {
-        printf("%d ", node->data);
-        node = node->next;
-    }
-    printf("\n");
-}
-
-
-// } Driver Code Ends
-/*
-  Node is defined as
-    struct node
-    {
-        int data;
-        struct Node* next;
-
-        Node(int x){
-            data = x;
-            next = NULL;
-        }
-
-    }*head;
 */
-
 class Solution {
   public:
     Node *reverseKGroup(Node *head, int k) {
         // code here
-        Node* t=head;
-        Node* a=NULL;
-        Node* b=NULL;
-        int c=0;
-        while(t && c<k){
-            a=t->next;
-            t->next=b;
-            b=t;
-            t=a;
-            c++;
+        if (k <= 1) return head;
+
+        Node dummy(0);
+        dummy.next = head;
+        Node* prev = &dummy;
+
+        while (true) {
+            
+            Node* end = prev;
+            int count = 0;
+            
+            while (count < k && end->next != nullptr) {
+                end = end->next;
+                count++;
+            }
+
+            if (count == 0) break;  
+
+            Node* start = prev->next;
+            Node* next = end->next;
+
+            reverse(start, next);   
+
+            prev->next = end;      
+            start->next = next;     
+
+            prev = start;          
+
+            if (count < k) break;    
         }
-        if(a) head->next=reverseKGroup(a,k);
-        return b;
+
+        return dummy.next;
+    }
+
+private:
+    void reverse(Node* head, Node* stop) {
+        Node* prev = stop;
+        while (head != stop) {
+            Node* nxt = head->next;
+            head->next = prev;
+            prev = head;
+            head = nxt;
+        }
     }
 };
-
-
-//{ Driver Code Starts.
-
-/* Driver program to test above function*/
-int main(void) {
-
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-
-        vector<int> arr;
-        string input;
-        getline(cin, input);
-        stringstream ss(input);
-        int number;
-        while (ss >> number) {
-            arr.push_back(number);
-        }
-        if (arr.empty()) {
-            cout << -1 << endl;
-            continue;
-        }
-
-        int data = arr[0];
-        Node* head = new Node(data);
-        Node* tail = head;
-        for (int i = 1; i < arr.size(); ++i) {
-            data = arr[i];
-            tail->next = new Node(data);
-            tail = tail->next;
-        }
-        int k;
-        cin >> k;
-        cin.ignore();
-
-        Solution ob;
-        head = ob.reverseKGroup(head, k);
-        printList(head);
-        cout << "~" << endl;
-    }
-
-    return 0;
-}
-// } Driver Code Ends
