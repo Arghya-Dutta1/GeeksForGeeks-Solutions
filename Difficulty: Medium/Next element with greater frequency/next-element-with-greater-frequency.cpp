@@ -1,6 +1,6 @@
 class Solution {
   public:
-    vector<int> findGreater(vector<int>& arr) {
+    vector<int> nextFreqGreater(vector<int>& arr) {
         // code here
         int n = arr.size();
         vector<int> result(n, -1);
