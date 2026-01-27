@@ -1,9 +1,3 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
 class Solution {
   public:
     bool flag;
@@ -21,10 +15,6 @@ class Solution {
             check(b, ck, w, i, j+1, m+1);
             check(b, ck, w, i-1, j, m+1);
             check(b, ck, w, i, j-1, m+1);
-            // check(b, ck, w, i+1, j+1, m+1);
-            // check(b, ck, w, i-1, j+1, m+1);
-            // check(b, ck, w, i+1, j-1, m+1);
-            // check(b, ck, w, i-1, j-1, m+1);
             ck[i][j]=false;
         }
         return;
@@ -42,30 +32,3 @@ class Solution {
         return flag;
     }
 };
-
-//{ Driver Code Starts.
-int main() {
-    int tc;
-    cin >> tc;
-    while (tc--) {
-        int n, m;
-        cin >> n >> m;
-        vector<vector<char>> mat(n, vector<char>(m, '*'));
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                cin >> mat[i][j];
-        string word;
-        cin >> word;
-        Solution obj;
-        bool ans = obj.isWordExist(mat, word);
-        if (ans)
-            cout << "true\n";
-        else
-            cout << "false\n";
-
-        cout << "~"
-             << "\n";
-    }
-    return 0;
-}
-// } Driver Code Ends
