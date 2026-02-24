@@ -1,7 +1,7 @@
 class Solution {
   public:
-    int longestCommonSum(vector<int> &a1, vector<int> &a2) {
-        // Code here.
+    int equalSumSpan(vector<int> &a1, vector<int> &a2) {
+        // code here
         int n = a1.size();
         unordered_map<int, int> mp;  
         int sum1 = 0, sum2 = 0, result = 0;
