@@ -1,6 +1,6 @@
 class Solution {
   public:
-    string smallestWindow(string &s, string &t) {
+    string minWindow(string &s, string &t) {
         // code here
         int n = s.size();
         vector<int> f(26, 0); 
